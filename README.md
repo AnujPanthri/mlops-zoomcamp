@@ -3,4 +3,5 @@
 
 - [ ] 01-intro
     - [X] setup environment
-    - [ ] download data
+    - [X] download data
+    - [X] added training notebook
