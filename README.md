@@ -6,3 +6,7 @@
     - [X] download data
     - [X] added training notebook
     - [X] done homework
+
+- [ ] 02-experiment-tracking
+    - [X] setup mlflow
+    - [ ] do experiment tracking
