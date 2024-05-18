@@ -9,4 +9,6 @@
 
 - [ ] 02-experiment-tracking
     - [X] setup mlflow
-    - [ ] do experiment tracking
+    - [X] do experiment tracking
+    - [X] Model tracking
+    - [ ] Model Registry
