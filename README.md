@@ -11,4 +11,4 @@
     - [X] setup mlflow
     - [X] do experiment tracking
     - [X] Model tracking
-    - [ ] Model Registry
+    - [X] Model Registry
