@@ -1,0 +1,15 @@
+artifact_uri: file:///workspaces/mlops-zoomcamp/02-experiment-tracking/homework/mlruns/0/5273b5490a3f4563922bf330e015ba23/artifacts
+end_time: 1716278111633
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5273b5490a3f4563922bf330e015ba23
+run_name: overjoyed-mouse-20
+run_uuid: 5273b5490a3f4563922bf330e015ba23
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1716278094295
+status: 3
+tags: []
+user_id: codespace
