@@ -34,6 +34,7 @@ def transform(
     split_on_feature_value = kwargs.get("split_on_feature_value")
     target = kwargs.get("target")
 
+    # df = df.iloc[:100]
     df = clean(df)
     df = combine_features(df)
     df = select_features(df,features=[split_on_feature, target])
@@ -44,18 +45,18 @@ def transform(
         split_on_feature_value,
     )
 
-
+    
     return df, df_train, df_val
 
 
-@test
-def test_output(output, *args) -> None:
-    """
-    Template code for testing the output of the block.
-    """
-    # print(output)
-    # assert isinstance(output,Tuple)
-    # assert len(output)==3
-    # assert isinstance(output[0],pd.DataFrame)
-    # assert isinstance(output[1],pd.DataFrame)
-    # assert isinstance(output[2],pd.DataFrame)
+# @test
+# def test_output(output, *args) -> None:
+#     """
+#     Template code for testing the output of the block.
+#     """
+    
+#     # assert isinstance(output,Tuple)
+#     # assert len(output)==3
+#     # assert isinstance(output[0],pd.DataFrame)
+#     # assert isinstance(output[1],pd.DataFrame)
+#     # assert isinstance(output[2],pd.DataFrame)

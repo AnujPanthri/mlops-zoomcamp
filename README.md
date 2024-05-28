@@ -21,7 +21,9 @@
         - [X] make pipeline
         - [X] data ingestion
         - [X] data transformation
-        - [ ] data visualization
+        - [X] data visualization(~kinda)
+        - [ ] data exporters
+            - [ ] some error
 
 
 
