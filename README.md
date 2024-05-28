@@ -15,15 +15,14 @@
     - [X] Launch tracking server:- mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root artifacts
 
 - [ ] 03-orchestration
-    - [X] install mage-ai: pip install mage-ai
-    - [X] run mage server: mage start
-    - [ ] data_preparation pipeline
+    - [X] setup mage: ```git clone https://github.com/mage-ai/mlops.git```
+    - [X] run mage server: ```cd 03-orchestration/mlops && scripts/start.sh```
+    - [X] data_preparation pipeline
         - [X] make pipeline
         - [X] data ingestion
         - [X] data transformation
-        - [X] data visualization(~kinda)
-        - [ ] data exporters
-            - [ ] some error
+        - [X] data visualization
+        - [X] data exporters
 
 
 
