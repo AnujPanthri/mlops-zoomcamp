@@ -23,9 +23,10 @@
         - [X] data transformation
         - [X] data visualization
         - [X] data exporters
-
+        - [ ] models hyperparameter tuning
 
 
 ## Tools
 
 - Tool to download github sub directory: https://download-directory.github.io/
+- Module 3 sorted video playlist: https://www.youtube.com/playlist?list=PLJlrBE4yPIzg9W9LaAp-3DOtZ9JnDd23J
