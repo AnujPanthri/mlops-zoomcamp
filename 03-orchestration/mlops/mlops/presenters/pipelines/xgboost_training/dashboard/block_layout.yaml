@@ -41,11 +41,12 @@ blocks:
     type: chart
     uuid: shap_values_force_chart
 layout:
-- - block_uuid: shap_values_bar
+- - block_uuid: shap_values
     height: 400
     width: 1
-  - block_uuid: shap_values
+  - block_uuid: shap_values_bar
     height: 400
+    max_width_percentage: 0
     width: 1
 - - block_uuid: shap_values_force_chart
     width: 1

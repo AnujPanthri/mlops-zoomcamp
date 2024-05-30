@@ -38,7 +38,7 @@ def export_data(
 
     # print(kwargs.get("max_depth"))
     model = fit_model(
-        build_data(X,y),
+        build_data(X_train,y_train),
         hyperparameters = hyperparameters,
         verbose_eval = kwargs.get("verbose_eval", 100),        
     )

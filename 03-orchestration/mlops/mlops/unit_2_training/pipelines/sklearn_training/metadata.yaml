@@ -112,7 +112,8 @@ run_pipeline_in_one_process: false
 settings:
   triggers: null
 spark_config: {}
-tags: []
+tags:
+- business critical
 type: python
 uuid: sklearn_training
 variables:
