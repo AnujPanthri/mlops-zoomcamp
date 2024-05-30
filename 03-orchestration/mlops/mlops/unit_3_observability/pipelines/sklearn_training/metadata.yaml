@@ -67,14 +67,14 @@ blocks:
   language: python
   name: Hyperparameter tuning/sklearn
   retry_config: null
-  status: failed
+  status: executed
   timeout: null
   type: transformer
   upstream_blocks:
   - training_set
   - load_models
   uuid: hyperparameter_tuning/sklearn
-- all_upstream_blocks_executed: false
+- all_upstream_blocks_executed: true
   color: null
   configuration:
     file_source:

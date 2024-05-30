@@ -17,16 +17,21 @@
 - [ ] 03-orchestration
     - [X] setup mage: ```git clone https://github.com/mage-ai/mlops.git```
     - [X] run mage server: ```cd 03-orchestration/mlops && scripts/start.sh```
-    - [X] data_preparation pipeline
+    - [X] unit_1_data_preparation
         - [X] make pipeline
         - [X] data ingestion
         - [X] data transformation
         - [X] data visualization
         - [X] data exporters
-        - [ ] models hyperparameter tuning
+    - [X] unit_2_training
+        - [X] sklearn models: hyperparameter tuning
+        - [X] sklearn models: training models with best hyperparameters
+        - [X] XGBoost model: hyperparameter tuning
+        - [X] XGBoost model: training model with best hyperparameters
+    - [ ] unit_3_observability
 
-
-## Tools
+## Useful Stuff
 
 - Tool to download github sub directory: https://download-directory.github.io/
 - Module 3 sorted video playlist: https://www.youtube.com/playlist?list=PLJlrBE4yPIzg9W9LaAp-3DOtZ9JnDd23J
+- Docker remove all cache: ```docker system prune -a```
