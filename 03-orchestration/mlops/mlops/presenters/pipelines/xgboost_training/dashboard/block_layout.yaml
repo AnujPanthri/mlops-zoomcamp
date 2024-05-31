@@ -1,4 +1,18 @@
 blocks:
+  custom_chart:
+    configuration:
+      chart_type: custom
+    data_source:
+      block_uuid: dashboard_data_source
+      pipeline_schedule_id: null
+      pipeline_uuid: xgboost_training
+      type: block
+    error: null
+    name: Custom chart
+    name_new: Custom chart
+    skip_render: false
+    type: chart
+    uuid: custom_chart
   shap_values:
     configuration:
       chart_type: custom
@@ -43,6 +57,9 @@ blocks:
 layout:
 - - block_uuid: shap_values
     height: 400
+    width: 1
+  - block_uuid: custom_chart
+    max_width_percentage: 40
     width: 1
   - block_uuid: shap_values_bar
     height: 400
