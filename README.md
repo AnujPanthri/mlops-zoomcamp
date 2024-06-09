@@ -14,7 +14,7 @@
     - [X] Model Registry
     - [X] Launch tracking server:- mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root artifacts
 
-- [ ] 03-orchestration
+- [X] 03-orchestration
     - [X] setup mage: ```git clone https://github.com/mage-ai/mlops.git```
     - [X] run mage server: ```cd 03-orchestration/mlops && scripts/start.sh```
     - [X] unit_1_data_preparation
@@ -29,6 +29,11 @@
         - [X] XGBoost model: hyperparameter tuning
         - [X] XGBoost model: training model with best hyperparameters
     - [ ] unit_3_observability
+        - didn't did all the charts and deployment
+
+- [X] 04-deployment
+- [ ] 05-monitoring
+
         
 ## Useful Stuff
 
