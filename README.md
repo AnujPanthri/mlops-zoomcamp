@@ -33,6 +33,9 @@
 
 - [X] 04-deployment
 - [ ] 05-monitoring
+    - [X] Environment setup
+    - [X] Prepare reference data and model
+    - [ ] Evidently metrics calculation
 
         
 ## Useful Stuff
