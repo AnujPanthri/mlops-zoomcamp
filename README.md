@@ -33,9 +33,10 @@
 
 - [X] 04-deployment
 - [ ] 05-monitoring
-    - [X] Environment setup
+    - [X] Environment setup(conda activate py11)
     - [X] Prepare reference data and model
-    - [ ] Evidently metrics calculation
+    - [X] Evidently metrics calculation
+    - [X] Evidently dashboard
 
         
 ## Useful Stuff
@@ -43,3 +44,4 @@
 - Tool to download github sub directory: https://download-directory.github.io/
 - Module 3 sorted video playlist: https://www.youtube.com/playlist?list=PLJlrBE4yPIzg9W9LaAp-3DOtZ9JnDd23J
 - Docker remove all cache: ```docker system prune -a```
+- conda deactivate
