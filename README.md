@@ -37,6 +37,7 @@
     - [X] Prepare reference data and model
     - [X] Evidently metrics calculation
     - [X] Evidently dashboard
+    - [X] Grafana dashboard with dummy data
 
         
 ## Useful Stuff
