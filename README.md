@@ -39,7 +39,8 @@
     - [X] Evidently dashboard
     - [X] Grafana dashboard with dummy data
     - [X] Grafana Dashboard with real data
-        
+    - [X] Saved dashboard to config json file
+         
 ## Useful Stuff
 
 - Tool to download github sub directory: https://download-directory.github.io/
