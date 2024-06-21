@@ -32,7 +32,7 @@
         - didn't did all the charts and deployment
 
 - [X] 04-deployment
-- [ ] 05-monitoring
+- [X] 05-monitoring
     - [X] Environment setup(conda activate py11)
     - [X] Prepare reference data and model
     - [X] Evidently metrics calculation
@@ -40,6 +40,7 @@
     - [X] Grafana dashboard with dummy data
     - [X] Grafana Dashboard with real data
     - [X] Saved dashboard to config json file
+    - [X] Evidently ReportPreset and TestSuitePreset
          
 ## Useful Stuff
 

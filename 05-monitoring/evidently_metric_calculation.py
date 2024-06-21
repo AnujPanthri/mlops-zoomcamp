@@ -85,7 +85,7 @@ def calculate_metrics_postgresql(curr, i):
 
     curr.execute(
         "insert into dummy_metrics(timestamp,prediction_drift,num_drifted_columns,share_missing_values) values(%s, %s, %s, %s)",
-        (datetime.datetime.now(pytz.timezone("UTC")), prediction_drift, num_drifted_columns, share_missing_values),
+        ((begin + datetime.timedelta(i)), prediction_drift, num_drifted_columns, share_missing_values),
     )
 
 def main():
