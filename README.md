@@ -41,10 +41,11 @@
     - [X] Grafana Dashboard with real data
     - [X] Saved dashboard to config json file
     - [X] Evidently ReportPreset and TestSuitePreset
+    - [X] Done Homework
          
 ## Useful Stuff
 
-- Tool to download github sub directory: https://download-directory.github.io/
+- Tool to download github repo sub directory: https://download-directory.github.io/
 - Module 3 sorted video playlist: https://www.youtube.com/playlist?list=PLJlrBE4yPIzg9W9LaAp-3DOtZ9JnDd23J
 - Docker remove all cache: ```docker system prune -a```
 - conda deactivate

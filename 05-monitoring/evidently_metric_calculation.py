@@ -11,7 +11,12 @@ import psycopg
 
 from evidently.report import Report
 from evidently import ColumnMapping
-from evidently.metrics import ColumnDriftMetric, DatasetDriftMetric, DatasetMissingValuesMetric
+from evidently.metrics import ColumnDriftMetric, DatasetDriftMetric, DatasetMissingValuesMetric, ColumnQuantileMetric
+
+
+# new_data = pd.read_parquet("data/green_tripdata_2024-03.parquet")
+# new_data['prediction'] = model.predict(new_data[num_features + cat_features].fillna(0))
+# len(new_data)
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s]: %(message)s")
 
@@ -24,18 +29,20 @@ create table dummy_metrics(
     timestamp timestamp,
     prediction_drift float,
     num_drifted_columns integer,
-    share_missing_values float
+    share_missing_values float,
+    fare_amount_quantile float,
+    trip_distance_quantile float
 );
 """
 
 reference_data = pd.read_parquet("data/reference.parquet")
-raw_data = pd.read_parquet("data/green_tripdata_2022-02.parquet")
+raw_data = pd.read_parquet("data/green_tripdata_2024-03.parquet")
 
 with open("models/lin_reg.bin", "rb") as f_in:
     model = joblib.load(f_in)
 
-begin = datetime.datetime(2022, 2, 1, 0, 0)
-total_days = 27
+begin = datetime.datetime(2024, 3, 1, 0, 0)
+total_days = 31
 
 target = "duration_min"
 num_features = ["passenger_count", "trip_distance", "fare_amount", "total_amount"]
@@ -52,8 +59,9 @@ report = Report(metrics=[
     ColumnDriftMetric(column_name='prediction'),
     DatasetDriftMetric(),
     DatasetMissingValuesMetric(),
-    ]   
-)
+    ColumnQuantileMetric(column_name="fare_amount", quantile=0.5),
+    ColumnQuantileMetric(column_name="trip_distance", quantile=0.5),
+])
 
 def prep_db():
     with psycopg.connect("host=localhost port=5432 user=postgres password=example", autocommit=True) as conn:
@@ -82,10 +90,14 @@ def calculate_metrics_postgresql(curr, i):
     num_drifted_columns = result['metrics'][1]['result']['number_of_drifted_columns']
     # share of missing values
     share_missing_values = result['metrics'][2]['result']['current']['share_of_missing_values']
+    # 0.5 quantile fare_amount
+    fare_amount_quantile = float(result['metrics'][3]['result']['current']['value'])
+    # 0.5 quantile trip_distance
+    trip_distance_quantile = float(result['metrics'][4]['result']['current']['value'])
 
     curr.execute(
-        "insert into dummy_metrics(timestamp,prediction_drift,num_drifted_columns,share_missing_values) values(%s, %s, %s, %s)",
-        ((begin + datetime.timedelta(i)), prediction_drift, num_drifted_columns, share_missing_values),
+        "insert into dummy_metrics(timestamp,prediction_drift,num_drifted_columns,share_missing_values,fare_amount_quantile,trip_distance_quantile) values(%s, %s, %s, %s, %s, %s)",
+         ((begin + datetime.timedelta(i)), prediction_drift, num_drifted_columns, share_missing_values,fare_amount_quantile,trip_distance_quantile),
     )
 
 def main():
