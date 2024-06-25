@@ -45,7 +45,7 @@
 
 - [ ] 06-best-practices
     - [X] Unit Testing
-    - [ ] Integration Testing
+    - [X] Integration Testing
 
 ## Useful Stuff
 
