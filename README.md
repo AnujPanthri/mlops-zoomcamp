@@ -42,7 +42,11 @@
     - [X] Saved dashboard to config json file
     - [X] Evidently ReportPreset and TestSuitePreset
     - [X] Done Homework
-         
+
+- [ ] 06-best-practices
+    - [X] Unit Testing
+    - [ ] Integration Testing
+
 ## Useful Stuff
 
 - Tool to download github repo sub directory: https://download-directory.github.io/
