@@ -46,6 +46,7 @@
 - [ ] 06-best-practices
     - [X] Unit Testing
     - [X] Integration Testing
+    - [X] Local Stack(Kinesis test)
 
 ## Useful Stuff
 
