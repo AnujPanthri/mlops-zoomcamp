@@ -1,4 +1,5 @@
 import os
+
 import model
 
 PREDICTIONS_STREAM_NAME = os.getenv('PREDICTIONS_STREAM_NAME', 'ride_predictions')
@@ -10,6 +11,7 @@ model_service = model.init(
     run_id=RUN_ID,
     test_run=TEST_RUN,
 )
+
 
 def lambda_handler(event, context):
     # pylint: disable=unused-argument

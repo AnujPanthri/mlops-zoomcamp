@@ -1,8 +1,9 @@
 import os
-import boto3
 import json
-from deepdiff import DeepDiff
 from pprint import pprint
+
+import boto3
+from deepdiff import DeepDiff
 
 endpoint_url = os.getenv("KINESIS_ENDPOINT_URL", "http://localhost:4566")
 kinesis_client = boto3.client('kinesis', endpoint_url=endpoint_url)
@@ -26,7 +27,7 @@ records_response = kinesis_client.get_records(
 records = records_response['Records']
 pprint(records)
 
-assert len(records)==1
+assert len(records) == 1
 
 actual_record = json.loads(records[0]["Data"])
 pprint(actual_record)
@@ -35,7 +36,7 @@ with open("prediction.json", "r", encoding="utf-8") as f_in:
     expected_record = json.load(f_in)
 
 diff = DeepDiff(actual_record, expected_record, significant_digits=1)
-print("diff:",diff)
+print("diff:", diff)
 
 assert 'type_changes' not in diff
 assert 'values_changed' not in diff

@@ -1,5 +1,7 @@
-from model import ModelService, base64_decode
 from pathlib import Path
+
+from model import ModelService, base64_decode
+
 
 def read_text(file):
     test_directory = Path(__file__).parent
@@ -7,11 +9,12 @@ def read_text(file):
     with open(test_directory / file, "r", encoding="utf-8") as f_in:
         return f_in.read().strip()
 
+
 def test_prepare_features():
     ride = {
         "PULocationID": 130,
         "DOLocationID": 205,
-        "trip_distance": 3.66,   
+        "trip_distance": 3.66,
     }
     model_service = ModelService(None)
     actual_features = model_service.prepare_features(ride)
@@ -20,7 +23,8 @@ def test_prepare_features():
         "trip_distance": 3.66,
     }
 
-    assert actual_features==expected_features
+    assert actual_features == expected_features
+
 
 def test_base64_decode():
 
@@ -31,20 +35,22 @@ def test_base64_decode():
         "ride": {
             "PULocationID": 130,
             "DOLocationID": 205,
-            "trip_distance": 3.66,   
+            "trip_distance": 3.66,
         },
         "ride_id": 256,
     }
 
-    assert actual_result==expected_result
+    assert actual_result == expected_result
 
 
 class ModelMock:
     def __init__(self, value):
         self.value = value
+
     def predict(self, X):
         n = len(X)
         return [self.value] * n
+
 
 def test_predict():
     model = ModelMock(10)
@@ -60,7 +66,7 @@ def test_predict():
 
     assert actual_prediction == expected_prediction
 
-    
+
 def test_lambda_handler():
     model = ModelMock(10.0)
     model_version = "Test123"
@@ -69,26 +75,27 @@ def test_lambda_handler():
     base64_input = read_text("data.b64")
 
     event = {
-    "Records": [{
-            "kinesis": {
-                "data": base64_input,
-            },
-        }],
+        "Records": [
+            {
+                "kinesis": {
+                    "data": base64_input,
+                },
+            }
+        ],
     }
 
     actual_predictions = model_service.lambda_handler(event)
     expected_predictions = {
-        'predictions':[
+        'predictions': [
             {
                 'model': 'ride_duration_prediction_model',
                 'version': model_version,
                 'prediction': {
                     'ride_duration': 10.0,
-                    'ride_id': 256,   
-                }
+                    'ride_id': 256,
+                },
             }
         ]
     }
 
     assert actual_predictions == expected_predictions
-
