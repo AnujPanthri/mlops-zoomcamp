@@ -47,7 +47,10 @@
     - [X] Unit Testing
     - [X] Integration Testing
     - [X] Local Stack(Kinesis test)
-
+    - [X] pylint, black, isort
+    - [X] pre-commit hooks
+    - [ ] makefile
+    
 ## Useful Stuff
 
 - Tool to download github repo sub directory: https://download-directory.github.io/

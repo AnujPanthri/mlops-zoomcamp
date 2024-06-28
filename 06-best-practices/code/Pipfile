@@ -12,6 +12,7 @@ deepdiff = "*"
 pylint = "*"
 black = "*"
 isort = "*"
+pre-commit = "*"
 
 [dev-packages]
 
