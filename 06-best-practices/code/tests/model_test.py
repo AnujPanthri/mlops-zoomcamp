@@ -1,4 +1,11 @@
 from model import ModelService, base64_decode
+from pathlib import Path
+
+def read_text(file):
+    test_directory = Path(__file__).parent
+
+    with open(test_directory / file, "r", encoding="utf-8") as f_in:
+        return f_in.read().strip()
 
 def test_prepare_features():
     ride = {
@@ -17,7 +24,7 @@ def test_prepare_features():
 
 def test_base64_decode():
 
-    encoded_data = "ewogICAgICAgICJyaWRlIjogewogICAgICAgICAgICAiUFVMb2NhdGlvbklEIjogMTMwLAogICAgICAgICAgICAiRE9Mb2NhdGlvbklEIjogMjA1LAogICAgICAgICAgICAidHJpcF9kaXN0YW5jZSI6IDMuNjYKICAgICAgICB9LCAKICAgICAgICAicmlkZV9pZCI6IDI1NgogICAgfQ=="
+    encoded_data = read_text("data.b64")
 
     actual_result = base64_decode(encoded_data)
     expected_result = {
@@ -59,17 +66,14 @@ def test_lambda_handler():
     model_version = "Test123"
     model_service = ModelService(model, model_version)
 
-    features = {
-        "PU_DO": "130_205",
-        "trip_distance": 3.66,
-    }
+    base64_input = read_text("data.b64")
 
     event = {
     "Records": [{
             "kinesis": {
-                "data": "ewogICAgICAgICJyaWRlIjogewogICAgICAgICAgICAiUFVMb2NhdGlvbklEIjogMTMwLAogICAgICAgICAgICAiRE9Mb2NhdGlvbklEIjogMjA1LAogICAgICAgICAgICAidHJpcF9kaXN0YW5jZSI6IDMuNjYKICAgICAgICB9LCAKICAgICAgICAicmlkZV9pZCI6IDI1NgogICAgfQ==",
+                "data": base64_input,
             },
-        }]
+        }],
     }
 
     actual_predictions = model_service.lambda_handler(event)

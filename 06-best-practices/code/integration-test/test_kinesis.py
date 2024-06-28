@@ -31,14 +31,8 @@ assert len(records)==1
 actual_record = json.loads(records[0]["Data"])
 pprint(actual_record)
 
-expected_record = {    
-    "model": "ride_duration_prediction_model",
-    "version": "Test123",
-    "prediction": {
-        "ride_duration": 21.3,
-        "ride_id": 256,
-    }
-}
+with open("prediction.json", "r", encoding="utf-8") as f_in:
+    expected_record = json.load(f_in)
 
 diff = DeepDiff(actual_record, expected_record, significant_digits=1)
 print("diff:",diff)
