@@ -49,7 +49,7 @@
     - [X] Local Stack(Kinesis test)
     - [X] pylint, black, isort
     - [X] pre-commit hooks
-    - [ ] makefile
+    - [X] Makefile
     
 ## Useful Stuff
 
