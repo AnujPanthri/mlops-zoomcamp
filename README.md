@@ -43,13 +43,14 @@
     - [X] Evidently ReportPreset and TestSuitePreset
     - [X] Done Homework
 
-- [ ] 06-best-practices
+- [X] 06-best-practices
     - [X] Unit Testing
     - [X] Integration Testing
     - [X] Local Stack(Kinesis test)
     - [X] pylint, black, isort
     - [X] pre-commit hooks
     - [X] Makefile
+    - [X] Homework
     
 ## Useful Stuff
 
