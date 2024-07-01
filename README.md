@@ -43,7 +43,7 @@
     - [X] Evidently ReportPreset and TestSuitePreset
     - [X] Done Homework
 
-- [X] 06-best-practices
+- [ ] 06-best-practices
     - [X] Unit Testing
     - [X] Integration Testing
     - [X] Local Stack(Kinesis test)
@@ -51,6 +51,9 @@
     - [X] pre-commit hooks
     - [X] Makefile
     - [X] Homework
+    - [ ] terraform (IAC Infrastructure as Code)
+        - [X] terraform setup
+        - [X] terraform basic
     
 ## Useful Stuff
 

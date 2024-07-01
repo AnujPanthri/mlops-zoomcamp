@@ -1,0 +1,8 @@
+services:
+  aws-mock:
+    image: localstack/localstack
+    ports:
+      - 4566:4566
+    
+    environment:
+      - SERVICES=kinesis,iam,sts

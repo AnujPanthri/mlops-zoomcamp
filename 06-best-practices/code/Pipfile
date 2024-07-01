@@ -13,6 +13,9 @@ pylint = "*"
 black = "*"
 isort = "*"
 pre-commit = "*"
+terraform-local = "*"
+localstack = "*"
+localstack-client = "*"
 
 [dev-packages]
 
