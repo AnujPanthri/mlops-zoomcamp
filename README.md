@@ -61,3 +61,8 @@
 - Module 3 sorted video playlist: https://www.youtube.com/playlist?list=PLJlrBE4yPIzg9W9LaAp-3DOtZ9JnDd23J
 - Docker remove all cache: ```docker system prune -a```
 - conda deactivate
+
+
+## Certificate 
+
+https://certificate.datatalks.club/mlops-zoomcamp/2024/286c615358c35738f2f81a0421901bd9d92992ab.pdf
